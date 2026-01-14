@@ -1,0 +1,206 @@
+/* ================================
+   NAVBAR
+================================ */
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    display: grid;
+    z-index: 1000;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.226);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+
+    height: var(--navbar-height);
+    
+}
+
+/* Estado quando rola a página */
+.navbar.scrolled {
+    background: rgba(0, 0, 0, 0.697);
+    border-bottom: 1px solid rgb(79, 155, 255);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
+}
+
+/* Linha superior luminosa */
+.navbar::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg,
+            transparent 0%,
+            rgba(79, 156, 255, 0.5) 50%,
+            transparent 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.navbar.scrolled::before {
+    opacity: 1;
+}
+
+
+/* ================================
+   LOGO
+================================ */
+
+.navbar-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 100%;
+    
+    display: grid;
+    grid-template-columns: 180px 1fr 180px;
+    align-items: center;
+}
+
+.navbar-logo {
+    position: absolute;
+    left: 80px;
+    opacity: 0.4;
+    top: 15%;
+    transform: translateY(-50%);
+}
+
+.navbar .logo-react {
+    width: 65px;
+    opacity: 0.8;
+
+    animation: react-spin 18s linear infinite;
+    filter: drop-shadow(0 0 12px rgba(0, 150, 255, 0.35));
+
+    pointer-events: none;
+}
+
+/* ================================
+   LINKS
+================================ */
+
+.navbar-links {
+    grid-column: 2;
+    justify-self: center;
+    
+    display: flex;
+    gap: 2.3rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar-links li {
+    font-size: 0.85rem;
+    font-weight: 510;
+    color: rgba(255, 255, 255, 0.75);
+    cursor: pointer;
+    position: relative;
+    padding: 0.25rem 0;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    letter-spacing: 0.3px;
+    user-select: none;
+    
+}
+
+.navbar-links li:hover {
+    color: #ffffff;
+    transform: translateY(-1x);
+}
+
+/* Underline animado aprimorado */
+.navbar-links li::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 1.5px;
+    background: linear-gradient(90deg, #4f9cff, #7fb9ff);
+    box-shadow: 0 0 8px rgba(79, 156, 255, 0.6);
+    transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 2px;
+}
+
+.navbar-links li:hover::after {
+    width: 100%;
+}
+
+/* Efeito de glow ao hover */
+.navbar-links li::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 0;
+    height: 0;
+    background: radial-gradient(circle, rgba(79, 156, 255, 0.1), transparent);
+    border-radius: 50%;
+    opacity: 0;
+    transition: all 0.3s ease;
+    z-index: -1;
+}
+
+.navbar-links li:hover::before {
+    width: 100%;
+    height: 160%;
+    opacity: 1;
+}
+
+/* Link ativo */
+.navbar-links li.active {
+    color: #4f9cff;
+}
+
+.navbar-links li.active::after {
+    width: 100%;
+}
+
+/* ================================
+   MOBILE MENU BUTTON (opcional)
+================================ */
+
+.mobile-menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.mobile-menu-toggle span {
+    width: 25px;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 8px rgba(79, 156, 255, 0.3);
+}
+
+.mobile-menu-toggle:hover span {
+    background: #4f9cff;
+    box-shadow: 0 0 12px rgba(79, 156, 255, 0.6);
+}
+
+.mobile-menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(7px, 7px);
+}
+
+.mobile-menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
+}

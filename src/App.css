@@ -1,0 +1,27 @@
+.hero {
+  position: relative;
+}
+
+.logo-react {
+  position: absolute;
+  top: 10%;
+  right: 20%;
+
+  width: 120px;
+
+  animation: react-spin 22s linear infinite;
+
+  filter: drop-shadow(0 0 12px rgba(0, 150, 255, 0.35));
+  pointer-events: none;
+}
+
+/* Animação */
+@keyframes react-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}

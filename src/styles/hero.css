@@ -1,0 +1,242 @@
+/* ================================
+   HERO – ESTRUTURA PRINCIPAL
+================================ */
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 2rem;
+    padding: 3rem;
+    padding-top: 0rem;
+    position: relative;
+    overflow: hidden;
+}
+
+/* ================================
+   BLOCO PERFIL (FOTO + REDES)
+================================ */
+
+.hero-profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.8rem;
+    position: relative;
+}
+
+/* ================================
+   FOTO
+================================ */
+
+.hero-profile-image {
+    position: relative;
+    width: 380px;
+    height: 380px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-profile-image img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    z-index: 2;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 10px 20px rgba(72, 187, 120, 0.45);
+}
+
+/* Hover controlado (zoom sutil) */
+.hero-profile-image:hover img {
+    transform: scale(1.05);
+    box-shadow: 0 10px 40px rgba(72, 187, 120, 0.6);
+}
+
+/* ================================
+   HALO (SEM ÁREA FANTASMA)
+================================ */
+
+.hero-profile-halo {
+    position: absolute;
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+    background: radial-gradient(circle,
+            rgba(72, 187, 120, 0.25) 0%,
+            rgba(0, 0, 0, 0) 70%);
+    filter: blur(60px);
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* ================================
+   REDES SOCIAIS (ALINHADAS AO EIXO DA FOTO)
+================================ */
+
+.hero-profile-socials {
+    display: flex;
+    gap: 1.2rem;
+}
+
+.hero-profile-socials a {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 1.3rem;
+    color: #ffffff;
+
+    background: linear-gradient(135deg, #4caf50, #2e7d32);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+}
+
+.hero-profile-socials a:hover {
+    transform: scale(1.15);
+    background: linear-gradient(135deg, #6ee68a, #4caf50);
+    box-shadow: 0 6px 20px rgba(72, 187, 120, 0.5);
+}
+
+/* ================================
+   CONTEÚDO TEXTUAL
+================================ */
+
+.hero-content {
+    max-width: 600px;
+    margin-top: -3.7rem;
+}
+
+.hero-text h1 {
+    font-size: 2.6rem;
+    font-weight: 100;
+    color: #fafafa;
+    margin-bottom: 1.5rem;
+}
+
+.hero-text p {
+    font-size: 1.2rem;
+    color: #c2c2c2;
+    margin-bottom: 1rem;
+    line-height: 1.9;
+}
+
+/* ================================
+   BOTÃO
+================================ */
+
+.hero-buttons {
+    margin-top: 1.5rem;
+    display: flex;
+    gap: 1.7rem;
+    margin-top: 1.5rem;
+}
+
+.button-primary {
+    padding: 12.5px 26px;
+    border-radius: 50px;
+    border: 2px solid #4caf50;
+    background: transparent;
+    color: #4caf50;
+    font-weight: 500;
+    font-family: inherit;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    box-shadow: 0 2px 20px rgba(76, 175, 80, 0.35);
+}
+
+.button-primary:hover {
+    background: #4caf50;
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(76, 175, 80, 0.35);
+}
+
+.button-secondary {
+    /* Estrutura e Tipografia */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.6rem 1rem;
+    font-weight: 500;
+    font-family: inherit;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 0.85rem;
+
+    /* Cores e Borda */
+    background: transparent;
+    border: 2px solid var(--accent);
+    /* Aumentado para 2px para melhor contraste */
+    color: var(--accent);
+    border-radius: 8px;
+    /* Bordas levemente arredondadas são mais modernas */
+
+    /* Transições Suaves */
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.button-secondary:hover {
+    background: color-mix(in srgb, var(--accent), transparent 90%);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transform: translateY(-1px);
+}
+
+.button-secondary:active {
+    transform: translateY(0);
+    filter: brightness(0.9);
+}
+
+.button-download {
+    gap: 0.7rem;
+}
+
+.button-download .btn-icon {
+    font-size: 1rem;
+    opacity: 0.9;
+    transition: transform 0.3s ease;
+    /* Garante que o ícone não herde comportamentos estranhos de texto */
+    display: flex;
+}
+
+.button-download:hover .btn-icon {
+    /* Animação de "pulo" para baixo simulando o download */
+    animation: downloadArrow 0.8s infinite;
+}
+
+/* Keyframes para uma animação de download mais viva */
+@keyframes downloadArrow {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(3px);
+    }
+}
+
+
+/* ================================
+   RESPONSIVO
+================================ */
+
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        gap: 3rem;
+        text-align: center;
+    }
+
+    .hero-content {
+        max-width: 100%;
+    }
+}
+

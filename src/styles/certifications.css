@@ -1,0 +1,428 @@
+/* Seção de Certificações - Estilo Lista Premium */
+.certifications {
+    text-align: center;
+    padding: 5rem 3rem;
+    position: relative;
+    min-height: 100vh;
+    padding-top: calc(var(--navbar-height) + 40px);
+}
+
+
+/* Título Principal - Super Destacado */
+.certifications h2 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: white;
+    letter-spacing: 2px;
+    position: relative;
+    display: inline-block;
+    z-index: 1;
+
+    text-shadow:
+        0 0 3px rgba(170, 210, 255, 0.75),
+        0 0 7px rgba(90, 160, 255, 0.55),
+        0 0 14px rgba(60, 120, 220, 0.35);
+
+}
+
+.certifications-description {
+    font-size: 0.95rem;
+    line-height: 3;
+    color: rgba(255, 255, 255, 0.7);
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Linha decorativa sob o título */
+.certifications h2::after {
+    content: '';
+        position: absolute;
+        bottom: -12px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 3px;
+        background: linear-gradient(90deg, transparent, #0096ff, transparent);
+        border-radius: 2px;
+}
+
+@keyframes lineGlow {
+
+    0%,
+    100% {
+        box-shadow:
+            0 0 10px var(--accent),
+            0 0 20px var(--accent),
+            0 4px 15px rgba(0, 89, 94, 0.4);
+        width: 140px;
+    }
+
+    50% {
+        box-shadow:
+            0 0 20px var(--accent),
+            0 0 40px var(--accent),
+            0 4px 25px rgba(0, 89, 94, 0.6);
+        width: 160px;
+    }
+}
+
+/* Container da Lista - Grid Layout */
+.certifications-list {
+    list-style: none;
+    padding: 0;
+    margin: 2.5rem auto 0;
+    max-width: 1800px;
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.2rem;
+}
+
+/* Item da Lista - Estilo Linha */
+.certifications-list li {
+    background: linear-gradient(90deg, rgba(0, 89, 94, 0.05) 0%, rgba(0, 89, 94, 0.15) 50%, rgba(0, 89, 94, 0.05) 100%);
+    backdrop-filter: blur(10px);
+    border-left: 4px solid var(--accent);
+    border-radius: 10px;
+    padding: 1.5rem 2.1rem;
+    margin-bottom: 1.1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Numeração da lista */
+.certifications-list li::before {
+    content: attr(data-index);
+    position: absolute;
+    left: -17px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 27px;
+    height: 35px;
+    background: var(--accent);
+    color: #000;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 900;
+    font-size: 0.9rem;
+    box-shadow: 0 4px 15px rgba(0, 89, 94, 0.5);
+    transition: all 0.3s ease;
+}
+
+/* Efeito de brilho ao passar o mouse */
+.certifications-list li::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.224), transparent);
+    transition: left 0.5s ease;
+}
+
+.certifications-list li:hover::after {
+    left: 100%;
+}
+
+.certifications-list li:hover {
+    transform: translateX(-10px);
+    background: linear-gradient(90deg, rgba(0, 89, 94, 0.1) 0%, rgba(0, 89, 94, 0.2) 50%, rgba(0, 89, 94, 0.1) 100%);
+    border-left-width: 6px;
+    box-shadow:
+        0 8px 30px rgba(90, 171, 228, 0.49),
+        inset 0 0 20px rgba(0, 89, 94, 0.1);
+}
+
+.certifications-list li:hover::before {
+    transform: translateY(-50%) scale(1.15) rotate(10deg);
+    box-shadow: 0 6px 20px rgba(0, 89, 94, 0.7);
+}
+
+/* Conteúdo à esquerda (título e informações) */
+.cert-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+/* Botão do certificado (título clicável) */
+.certifications-list button {
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.804);
+    font-size: 1rem;
+    line-height: 1.4;
+    font-weight: 600;
+    text-align: left;
+    cursor: pointer;
+    padding: 0px;
+    transition: all 0.3s ease;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+.certifications-list button:hover {
+    color: var(--accent);
+    text-shadow: 0 0 10px rgba(0, 89, 94, 0.5);
+    transform: translateX(5px);
+}
+
+/* Informações (instituição e ano) */
+.certifications-list span {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.90rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-weight: 400;
+}
+
+.certifications-list span::before {
+    font-size: 1.1rem;
+}
+
+/* Ícone de visualização à direita */
+.cert-view-icon {
+    width: 50px;
+    height: 50px;
+    background: rgba(0, 89, 94, 0.3);
+    border: 2px solid var(--accent);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    transition: all 0.4s ease;
+    flex-shrink: 0;
+    align-self: flex-end;
+    margin-top: 1rem;
+}
+
+.certifications-list li:hover .cert-view-icon {
+    background: var(--accent);
+    color: #000;
+    transform: scale(1.1) rotate(15deg);
+    box-shadow: 0 6px 20px rgba(0, 89, 94, 0.6);
+}
+
+/* Modal de Visualização */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.169);
+    backdrop-filter: blur(12px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+    padding: 2rem;
+    cursor: pointer;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* Conteúdo do Modal */
+.modal-content {
+    position: relative;
+    max-width: 90%;
+    max-height: 90vh;
+    cursor: default;
+    animation: zoomIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow:
+        0 30px 80px rgba(0, 0, 0, 0.6),
+        0 0 50px rgba(0, 89, 94, 0.4),
+        inset 0 0 0 2px rgba(0, 89, 94, 0.3);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale(0.7) rotateX(20deg);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1) rotateX(0);
+    }
+}
+
+/* Imagem do Certificado */
+.modal-content img {
+    width: 100%;
+    max-height: 80vh;
+    height: auto;
+    display: block;
+    border-radius: 12px;
+}
+
+/* Texto de instrução */
+.modal::after {
+    content: 'Clique fora para fechar';
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    animation: fadeInDelay 0.8s ease forwards;
+    opacity: 0;
+}
+
+@keyframes fadeInDelay {
+    to {
+        opacity: 1;
+    }
+}
+
+/* Responsividade - Tablets */
+@media (max-width: 1024px) {
+    .certifications {
+        padding: 4rem 2rem;
+    }
+
+    .certifications-list {
+        max-width: 100%;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Responsividade - Mobile */
+@media (max-width: 768px) {
+    .certifications {
+        padding: 3rem 1.5rem;
+    }
+
+    .certifications h2 {
+        font-size: 2.4rem;
+        letter-spacing: 2px;
+    }
+
+    .certifications h2::after {
+        width: 100px;
+        height: 4px;
+    }
+
+    .certifications-list {
+        margin-top: 3rem;
+    }
+
+    .certifications-list li {
+        padding: 1.5rem 2rem 1.5rem 2.5rem;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    .certifications-list li::before {
+        width: 30px;
+        height: 30px;
+        font-size: 0.8rem;
+        left: -12px;
+    }
+
+    .certifications-list button {
+        font-size: 1.2rem;
+    }
+
+    .certifications-list span {
+        font-size: 0.9rem;
+    }
+
+    .cert-view-icon {
+        align-self: flex-end;
+        width: 45px;
+        height: 45px;
+        font-size: 1.3rem;
+    }
+
+    .certifications-list li:hover {
+        transform: translateX(10px);
+    }
+
+    .modal {
+        padding: 1rem;
+    }
+
+    .modal-content {
+        max-width: 95%;
+    }
+
+    .modal-close-btn {
+        width: 45px;
+        height: 45px;
+        font-size: 1.3rem;
+    }
+}
+
+/* Responsividade - Mobile Pequeno */
+@media (max-width: 480px) {
+    .certifications {
+        padding: 2.5rem 1rem;
+    }
+
+    .certifications h2 {
+        font-size: 2rem;
+        letter-spacing: 1.5px;
+    }
+
+    .certifications h2::after {
+        width: 80px;
+    }
+
+    .certifications-list li {
+        padding: 1.2rem 1.5rem 1.2rem 2rem;
+    }
+
+    .certifications-list li::before {
+        width: 28px;
+        height: 28px;
+        font-size: 0.75rem;
+        left: -10px;
+    }
+
+    .certifications-list button {
+        font-size: 1.1rem;
+    }
+
+    .certifications-list span {
+        font-size: 0.85rem;
+    }
+
+    .cert-view-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+}
