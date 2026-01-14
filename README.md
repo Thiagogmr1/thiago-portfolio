@@ -21,7 +21,8 @@ Sou desenvolvedor front-end com foco na criação de interfaces limpas, responsi
 - Design simples e minimalista
 
 ## 🌐 Acesso ao projeto
-Em breve.
+
+thiago-portfolio-chi.vercel.app
 
 ---
 Desenvolvido por Thiago Gabriel
