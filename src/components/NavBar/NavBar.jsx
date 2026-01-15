@@ -7,101 +7,87 @@ export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeLink, setActiveLink] = useState('hero');
 
-  useEffect(() => {
   const sections = ['hero', 'projects', 'skills', 'achievements', 'certifications'];
-    
+
+  useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
 
-        const currentSection = sections.find(id => {
-          const el = document.getElementById(id);
-          if (!el) return false;
+      const currentSection = sections.find(id => {
+        const el = document.getElementById(id);
+        if (!el) return false;
 
-          const rect = el.getBoundingClientRect();
-          return rect.top <= 120 && rect.bottom >= 150;
-        });
+        const rect = el.getBoundingClientRect();
+        return rect.top <= 120 && rect.bottom >= 150;
+      });
 
-        if (currentSection && currentSection !== activeLink) {
+      if (currentSection) {
         setActiveLink(currentSection);
-        }
-      };
+      }
+    };
 
-      handleScroll();
-
-    window. addEventListener('scroll', handleScroll);
+    handleScroll();
+    window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [activeLink]);
+  }, []);
 
   useEffect(() => {
-    if (mobileMenuOpen) {
-      document.body.classList.add('menu-open');
-    } else {
-      document.body.classList.remove('menu-open');
-    }
+    document.body.classList.toggle('menu-open', mobileMenuOpen);
   }, [mobileMenuOpen]);
 
-  const handleLinkClick = (link) => {
-    setActiveLink(link);
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 1024) {
+        setMobileMenuOpen(false);
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  const handleLinkClick = (id) => {
+    setActiveLink(id);
     setMobileMenuOpen(false);
-    
-    // Scroll suave para seção
-    const element = document.getElementById(link);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
   return (
     <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
       <div className="navbar-container">
-        
+
         <div className="navbar-logo">
           <img src={logoReact} alt="React Logo" className="logo-react" />
         </div>
 
         <ul className={`navbar-links ${mobileMenuOpen ? 'active' : ''}`}>
-          <li 
-            className={activeLink === 'hero' ? 'active' : ''}
-            onClick={() => handleLinkClick('hero')}
-          >
-            Home
-          </li>
-          <li 
-            className={activeLink === 'projects' ? 'active' : ''}
-            onClick={() => handleLinkClick('projects')}
-          >
-            Projects
-          </li>
-          <li 
-            className={activeLink === 'skills' ? 'active' : ''}
-            onClick={() => handleLinkClick('skills')}
-          >
-            Skills
-          </li>
-          <li 
-            className={activeLink === 'achievements' ? 'active' : ''}
-            onClick={() => handleLinkClick('achievements')}
-          >
-            Achievements
-          </li>
-
-          <li 
-            className={activeLink === 'certifications' ? 'active' : ''}
-            onClick={() => handleLinkClick('certifications')}
-          >
-            Certificates
-          </li>
+          {sections.map(section => (
+            <li
+              key={section}
+              className={activeLink === section ? 'active' : ''}
+            >
+              <a onClick={() => handleLinkClick(section)}>
+                {section.charAt(0).toUpperCase() + section.slice(1)}
+              </a>
+            </li>
+          ))}
         </ul>
 
-        <button 
+        <button
           className={`mobile-menu-toggle ${mobileMenuOpen ? 'active' : ''}`}
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          aria-label="Toggle menu"
+          onClick={() => setMobileMenuOpen(prev => !prev)}
+          aria-label="Toggle navigation menu"
+          aria-expanded={mobileMenuOpen}
         >
-          <span></span>
-          <span></span>
-          <span></span>
+          <span />
+          <span />
+          <span />
         </button>
+
       </div>
     </nav>
   );
