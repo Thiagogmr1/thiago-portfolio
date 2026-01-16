@@ -183,7 +183,8 @@
 }
 
 .button-secondary:hover {
-    background: color-mix(in srgb, var(--accent), transparent 90%);
+    background: #4caf50;
+    color: white;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     transform: translateY(-1px);
 }
@@ -231,12 +232,71 @@
 @media (max-width: 768px) {
     .hero {
         flex-direction: column;
-        gap: 3rem;
+        align-items: center;
+        justify-content: center;
+        min-height: auto;
+        padding: 2.5rem 1.5rem;
         text-align: center;
     }
 
+    /* Bloco da foto sobe */
+    .hero-profile {
+        order: 1;
+        margin-bottom: -1rem;
+    }
+
+    /* Redes logo abaixo da foto */
+    .hero-profile-socials {
+        order: 2;
+        justify-content: center;
+    }
+
+    /* Conteúdo textual abaixo das redes */
     .hero-content {
+        order: 3;
+        margin-top: 0;
         max-width: 100%;
+    }
+
+    /* Botões por último */
+    .hero-buttons {
+        order: 4;
+        justify-content: center;
+        flex-wrap: wrap;
     }
 }
 
+/* ================================
+   RESPONSIVO
+================================ */
+
+@media (max-width: 480px) {
+    .hero {
+        padding: 2rem 1rem;
+        gap: 2.2rem;
+    }
+
+    .hero-profile-image {
+        width: 260px;
+        height: 260px;
+    }
+
+    .hero-profile-halo {
+        width: 220px;
+        height: 220px;
+        filter: blur(50px);
+    }
+
+    .hero-text h1 {
+        font-size: 1.9rem;
+    }
+
+    .hero-text p {
+        font-size: 1rem;
+        line-height: 1.4;
+    }
+
+    .hero-buttons {
+        gap: 1rem;
+    }
+}
