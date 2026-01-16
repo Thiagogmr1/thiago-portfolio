@@ -164,6 +164,12 @@
     width: 100%;
 }
 
+.navbar-links a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
 /* ================================
    MOBILE MENU BUTTON (opcional)
 ================================ */
@@ -203,4 +209,129 @@
 
 .mobile-menu-toggle.active span:nth-child(3) {
     transform: rotate(-45deg) translate(7px, -7px);
+}
+
+
+/* ================================
+   NAVBAR — MOBILE MINIMAL
+================================ */
+
+@media (max-width: 768px) {
+
+    .navbar {
+        height: auto;
+        background: transparent;
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+        border-bottom: none;
+        box-shadow: none;
+        pointer-events: none;
+    }
+
+    .navbar::before {
+        display: none;
+    }
+
+    .navbar-container {
+        display: block;
+        padding: 0;
+    }
+
+    .navbar-logo {
+        display: none;
+    }
+
+    /* Botão flutuante */
+    .mobile-menu-toggle {
+        display: flex;
+        position: fixed;
+        top: 1.2rem;
+        left: 1.2rem;
+        z-index: 1200;
+        pointer-events: auto;
+
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border-radius: 10px;
+        padding: 0.6rem;
+    }
+
+    /* Menu lateral */
+    .navbar-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 280px;
+        height: 100vh;
+
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+
+        gap: 0;
+        padding: 6rem 2rem 2rem;
+
+        background: rgba(0, 0, 0, 0.595);
+        backdrop-filter: blur(30px);
+        -webkit-backdrop-filter: blur(30px);
+
+        border-left: 1px solid rgba(79, 156, 255, 0.2);
+        box-shadow: -10px 0 40px rgba(0, 0, 0, 0.5);
+
+        transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        z-index: 1100;
+        pointer-events: auto;
+    }
+
+    .navbar-links a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 1rem 0;
+    }
+
+    .navbar-links.active {
+        right: 0;
+    }
+
+    .navbar-links li {
+        width: 100%;
+        padding: 1rem 0;
+        font-size: 1.05rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .navbar-links li::after {
+        bottom: 0;
+        height: 1px;
+    }
+
+    .navbar-links li:hover {
+        transform: translateX(-4px);
+        padding-left: 0.5rem;
+    }
+}
+
+/* ================================
+   MOBILE — FULL WIDTH
+================================ */
+
+@media (max-width: 480px) {
+    .navbar-links {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar-links a:active {
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 6px;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .navbar-links li::before {
+        display: none;
+    }
 }

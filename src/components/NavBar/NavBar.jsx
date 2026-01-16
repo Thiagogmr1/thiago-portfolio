@@ -2,12 +2,13 @@ import { useState, useEffect } from 'react';
 import '../NavBar/NavBar.css';
 import logoReact from '../../assets/logoReact.svg';
 
+const sections = ['hero', 'projects', 'skills', 'achievements', 'certifications'];
+
 export default function Navbar() {
+
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeLink, setActiveLink] = useState('hero');
-
-  const sections = ['hero', 'projects', 'skills', 'achievements', 'certifications'];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -70,7 +71,13 @@ export default function Navbar() {
               key={section}
               className={activeLink === section ? 'active' : ''}
             >
-              <a onClick={() => handleLinkClick(section)}>
+              <a
+                href={`#${section}`}
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleLinkClick(section);
+                }}
+              >
                 {section.charAt(0).toUpperCase() + section.slice(1)}
               </a>
             </li>
