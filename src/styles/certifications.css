@@ -306,7 +306,9 @@
     }
 }
 
-/* Responsividade - Tablets */
+/* ================================
+   CERTIFICATES — TABLET
+================================ */
 @media (max-width: 1024px) {
     .certifications {
         padding: 4rem 2rem;
@@ -314,11 +316,24 @@
 
     .certifications-list {
         max-width: 100%;
+        display: grid;
         grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+
+    .certifications-list li {
+        padding: 1.5rem;
+    }
+
+    .certifications-description {
+        margin-top: 20px;
+        line-height: 2.0;
     }
 }
 
-/* Responsividade - Mobile */
+/* ================================
+   CERTIFICATES — MOBILE
+================================ */
 @media (max-width: 768px) {
     .certifications {
         padding: 3rem 1.5rem;
@@ -335,14 +350,18 @@
     }
 
     .certifications-list {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
         margin-top: 3rem;
     }
 
     .certifications-list li {
-        padding: 1.5rem 2rem 1.5rem 2.5rem;
+        padding: 1.5rem 1.8rem;
         flex-direction: column;
         align-items: flex-start;
         gap: 1rem;
+        transition: none; /* remove hover exagerado */
     }
 
     .certifications-list li::before {
@@ -367,10 +386,7 @@
         font-size: 1.3rem;
     }
 
-    .certifications-list li:hover {
-        transform: translateX(10px);
-    }
-
+    /* Modal */
     .modal {
         padding: 1rem;
     }
@@ -386,7 +402,9 @@
     }
 }
 
-/* Responsividade - Mobile Pequeno */
+/* ================================
+   CERTIFICATES — MOBILE PEQUENO
+================================ */
 @media (max-width: 480px) {
     .certifications {
         padding: 2.5rem 1rem;
