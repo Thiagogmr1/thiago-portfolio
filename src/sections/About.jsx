@@ -28,7 +28,7 @@ export default function About({ isSidebarOpen, setIsSidebarOpen, setHighlightCon
             </div>
             <h2>Thiago Gabriel</h2>
             <p className="sidebar-subtitle">
-              Estudadnte de Engenharia de Software & Empreendedor
+              Estudante de Engenharia de Software & Empreendedor
             </p>
           </div>
 
