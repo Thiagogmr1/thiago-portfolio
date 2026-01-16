@@ -1,0 +1,490 @@
+/* ================================
+   FOOTER
+================================ */
+
+.footer {
+    position: relative;
+    width: 100%;
+    background: linear-gradient(180deg,
+        rgba(0, 0, 0, 0.178) 0%,
+        rgba(5, 10, 20, 0.98) 50%,
+        rgba(0, 0, 0, 1) 100%);
+    border-top: 1px solid rgba(79, 156, 255, 0.2);
+    padding: 4rem 2rem 2rem;
+    margin-top: 6rem;
+    overflow: hidden;
+}
+
+/* Linha brilhante no topo */
+.footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: rgba(79, 156, 255, 0.8);
+    box-shadow: 0 0 20px rgba(79, 156, 255, 0.6);
+}
+
+
+/* ================================
+   CONTAINER
+================================ */
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3rem;
+    position: relative;
+    z-index: 1;
+}
+
+/* ================================
+   COLUNAS
+================================ */
+
+.footer-column {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.footer-column h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 0.5rem;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+/* Underline nos títulos */
+.footer-column h4::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 40px;
+    height: 2px;
+    background: linear-gradient(90deg, #4f9cff, transparent);
+    box-shadow: 0 0 8px rgba(79, 156, 255, 0.4);
+}
+
+/* ================================
+   COLUNA 1: LOGO E DESCRIÇÃO
+================================ */
+
+.footer-about {
+    gap: 0.96rem;
+    margin-top: -11px;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.footer-logo-img {
+    width: 50px;
+    height: 50px;
+    animation: react-spin 20s linear infinite;
+    filter: drop-shadow(0 0 15px rgba(79, 156, 255, 0.4));
+}
+
+@keyframes react-spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.footer-logo h3 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0;
+    background: linear-gradient(135deg, #4f9cff, #7fb9ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.footer-description {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-top: 11px;
+    color: rgba(255, 255, 255, 0.6);
+    max-width: 280px;
+}
+
+/* ================================
+   COLUNA 2: LINKS RÁPIDOS
+================================ */
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.footer-links li {
+    position: relative;
+    padding-left: 1.2rem;
+}
+
+.footer-links li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: #4f9cff;
+    opacity: 0;
+    transform: translateX(-5px);
+    transition: all 0.3s ease;
+}
+
+.footer-links li:hover::before {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.footer-links a {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.footer-links a:hover {
+    color: #4f9cff;
+    transform: translateX(5px);
+    text-shadow: 0 0 8px rgba(79, 156, 255, 0.5);
+}
+
+/* ================================
+   COLUNA 3: CONTATO
+================================ */
+
+.footer-contact ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.footer-contact li {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.contact-icon {
+    font-size: 1.1rem;
+    color: #4f9cff;
+    min-width: 20px;
+}
+
+.footer-contact a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.footer-contact a:hover {
+    color: #4f9cff;
+    text-shadow: 0 0 8px rgba(79, 156, 255, 0.5);
+}
+
+/* ================================
+   COLUNA 4: REDES SOCIAIS
+================================ */
+
+.footer-social {
+    gap: 1.5rem;
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.social-link {
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(79, 156, 255, 0.1);
+    border: 1px solid rgba(79, 156, 255, 0.3);
+    border-radius: 30px;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.3rem;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.social-link::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 0;
+    height: 0;
+    background: radial-gradient(circle, rgba(79, 156, 255, 0.3), transparent);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.social-link:hover::before {
+    width: 100%;
+    height: 100%;
+}
+
+.social-link:hover {
+    background: rgba(79, 156, 255, 0.2);
+    border-color: #4f9cff;
+    color: #4f9cff;
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(79, 156, 255, 0.3);
+}
+
+.social-text {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.5);
+    font-style: italic;
+}
+
+/* ================================
+   LINHA DIVISÓRIA
+================================ */
+
+.footer-divider {
+    max-width: 1200px;
+    margin: 3rem auto 2rem;
+    height: 1px;
+    background: linear-gradient(90deg,
+            transparent 0%,
+            rgba(79, 156, 255, 0.3) 50%,
+            transparent 100%);
+    position: relative;
+    z-index: 1;
+}
+
+/* ================================
+   FOOTER BOTTOM
+================================ */
+
+.footer-bottom {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    position: relative;
+    z-index: 1;
+}
+
+.copyright {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.copyright .highlight {
+    color: #4f9cff;
+    font-weight: 600;
+}
+
+.made-with {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.5);
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.heart {
+    color: #ff4757;
+    animation: heartbeat 1.5s ease-in-out infinite;
+}
+
+@keyframes heartbeat {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+.react-icon {
+    color: #61dafb;
+}
+
+/* ================================
+   RESPONSIVE
+================================ */
+
+/* Tablet */
+@media (max-width: 1024px) {
+    .footer-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2.5rem;
+    }
+
+    .footer-about {
+        grid-column: 1 / -1;
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .footer {
+        padding: 3rem 1.5rem 1.5rem;
+        margin-top: 4rem;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+
+    .footer-about {
+        grid-column: 1;
+        text-align: center;
+        align-items: center;
+    }
+
+    .footer-logo {
+        justify-content: center;
+    }
+
+    .footer-description {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .footer-column h4 {
+        font-size: 1rem;
+    }
+
+    .footer-column h4::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .footer-links ul,
+    .footer-contact ul {
+        align-items: center;
+    }
+
+    .footer-links li {
+        padding-left: 0;
+        text-align: center;
+    }
+
+    .footer-links li::before {
+        display: none;
+    }
+
+    .footer-contact li {
+        justify-content: center;
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer {
+        padding: 2rem 1rem 1rem;
+    }
+
+    .footer-container {
+        gap: 2rem;
+    }
+
+    .footer-logo-img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .footer-logo h3 {
+        font-size: 1.2rem;
+    }
+
+    .social-link {
+        width: 40px;
+        height: 40px;
+        font-size: 1.1rem;
+    }
+
+    .footer-column h4 {
+        font-size: 0.95rem;
+    }
+
+    .footer-links a,
+    .footer-contact li,
+    .footer-description {
+        font-size: 0.85rem;
+    }
+}
+
+/* ================================
+   ACCESSIBILITY
+================================ */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .footer::before,
+    .footer-logo-img,
+    .heart {
+        animation: none !important;
+    }
+
+    .footer-links a,
+    .social-link {
+        transition: none;
+    }
+}
+
+.social-link:focus-visible {
+    outline: 2px solid #4f9cff;
+    outline-offset: 4px;
+}
+
+.footer-links a:focus-visible {
+    outline: 2px solid #4f9cff;
+    outline-offset: 2px;
+    border-radius: 4px;
+}
