@@ -78,7 +78,9 @@ export default function Navbar() {
                   handleLinkClick(section);
                 }}
               >
-                {section.charAt(0).toUpperCase() + section.slice(1)}
+                
+              {section === 'hero' ? 'Home' : section.charAt(0).toUpperCase() + section.slice(1)}
+
               </a>
             </li>
           ))}
