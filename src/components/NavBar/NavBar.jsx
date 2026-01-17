@@ -30,11 +30,26 @@ export default function Navbar() {
     handleScroll();
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [sections]);
 
   useEffect(() => {
-    document.body.classList.toggle('menu-open', mobileMenuOpen);
+    if (!mobileMenuOpen) return;
+
+    const scrollY = window.scrollY;
+
+    document.body.style.position = 'fixed';
+    document.body.style.top = `-${scrollY}px`;
+    document.body.style.width = '100%';
+
+    return () => {
+      document.body.style.position = '';
+      document.body.style.top = '';
+      document.body.style.width = '';
+
+      window.scrollTo(0, scrollY);
+    };
   }, [mobileMenuOpen]);
+
 
   useEffect(() => {
     const handleResize = () => {
@@ -48,12 +63,21 @@ export default function Navbar() {
   }, []);
 
   const handleLinkClick = (id) => {
-    setActiveLink(id);
-    setMobileMenuOpen(false);
-
     const el = document.getElementById(id);
-    if (el) {
+    if (!el) return;
+
+    // Se o menu mobile estiver aberto, aplica delay
+    if (mobileMenuOpen) {
+      setMobileMenuOpen(false);
+
+      setTimeout(() => {
+        el.scrollIntoView({ behavior: 'smooth' });
+        setActiveLink(id);
+      }, 350);
+    } else {
+      // Desktop (ou mobile sem menu aberto): navegação imediata
       el.scrollIntoView({ behavior: 'smooth' });
+      setActiveLink(id);
     }
   };
 
@@ -78,8 +102,8 @@ export default function Navbar() {
                   handleLinkClick(section);
                 }}
               >
-                
-              {section === 'hero' ? 'Home' : section.charAt(0).toUpperCase() + section.slice(1)}
+
+                {section === 'hero' ? 'Home' : section.charAt(0).toUpperCase() + section.slice(1)}
 
               </a>
             </li>
