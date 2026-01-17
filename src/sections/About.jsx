@@ -1,8 +1,25 @@
+import { useEffect } from 'react';
+
 import '../styles/about.css';
 import { FaTimes } from 'react-icons/fa';
 import profile from '../assets/images/Perfil.jpg';
 
+
 export default function About({ isSidebarOpen, setIsSidebarOpen, setHighlightContacts }) {
+
+    useEffect(() => {
+      if (isSidebarOpen) {
+        document.body.style.overflow = 'hidden';
+      } else {
+        document.body.style.overflow = 'auto';
+      }
+
+      // cleanup obrigatório
+      return () => {
+        document.body.style.overflow = 'auto';
+      };
+    }, [isSidebarOpen]);
+
   return (
     <>
       {/* Overlay */}

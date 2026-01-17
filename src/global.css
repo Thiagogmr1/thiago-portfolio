@@ -32,3 +32,6 @@ body {
     --navbar-height: 65px;
 }
 
+html {
+    scrollbar-gutter: stable;
+}
