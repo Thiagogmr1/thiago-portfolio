@@ -227,7 +227,7 @@
 
     .achievements-grid {
         grid-template-columns: 1fr;
-        gap: 1.8rem;
+        gap: 2.9rem;
     }
 
     .achievement-card {
