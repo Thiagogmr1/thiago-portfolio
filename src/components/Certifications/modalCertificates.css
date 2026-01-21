@@ -1,0 +1,190 @@
+/* ==============================
+   OVERLAY
+============================== */
+
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+
+/* ==============================
+   MODAL
+============================== */
+
+.modal-carousel {
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    padding: 40px 20px;
+}
+
+
+/* ==============================
+   FECHAR
+============================== */
+
+.modal-close {
+    position: absolute;
+    top: -48px;
+    right: 0;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.6rem;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.modal-close:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+
+/* ==============================
+   NAVEGAÇÃO
+============================== */
+
+.nav {
+    position: absolute;
+    top: 50%;
+
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.08);
+    border: none;
+    border-radius: 50%;
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    color: white;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    z-index: 5;
+}
+
+.nav:hover {
+    background: rgba(255, 255, 255, 0.18);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.nav.prev {
+    left: -150px;
+}
+
+.nav.next {
+    right: -150px;
+}
+
+
+/* ==============================
+   CARROSSEL
+============================== */
+
+.carousel-track {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 28px;
+    position: relative;
+}
+
+
+/* ==============================
+   CERTIFICADOS
+============================== */
+
+.certificate {
+    border-radius: 14px;
+    box-shadow:
+        0 30px 60px rgba(0, 0, 0, 0.55),
+        0 10px 20px rgba(0, 0, 0, 0.4);
+    transition:
+        transform 0.4s ease,
+        opacity 0.4s ease,
+        filter 0.4s ease;
+    user-select: none;
+    pointer-events: none;
+}
+
+
+/* ==============================
+   SLOT CENTRAL (FIXO)
+============================== */
+
+.active-slot {
+    width: 440px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 3;
+}
+
+
+/* ==============================
+   CERTIFICADO ATIVO
+============================== */
+
+.certificate.active {
+    width: 420px;
+    transform: scale(1);
+    z-index: 3;
+}
+
+
+/* ==============================
+   PREVIEWS
+============================== */
+
+.certificate.preview {
+    width: 240px;
+    opacity: 0.45;
+    filter: blur(2px);
+    transform: scale(0.88);
+    z-index: 1;
+}
+
+
+/* Preview esquerdo */
+.certificate.preview.left {
+    transform: translateX(-20px) scale(0.88);
+}
+
+/* Preview direito */
+.certificate.preview.right {
+    transform: translateX(20px) scale(0.88);
+}
+
+
+/* ==============================
+   RESPONSIVO
+============================== */
+
+@media (max-width: 768px) {
+    .certificate.active {
+        width: 300px;
+    }
+
+    .certificate.preview {
+        display: none;
+    }
+
+    .nav.prev {
+        left: 8px;
+    }
+
+    .nav.next {
+        right: 8px;
+    }
+}

@@ -1,110 +1,129 @@
-import { useState } from 'react';
-import '../styles/certifications.css';
+import { useState } from "react";
+import "../styles/certifications.css";
+import ModalCertificates from "../components/Certifications/ModalCertificates";
 
 export default function Certifications() {
-  const [selectedCert, setSelectedCert] = useState(null);
+  const [open, setOpen] = useState(false);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [certificates, setCertificates] = useState([]);
+
+  const certificatesData = {
+    faculdade: [
+      "/certificates/cert-1.png",
+      "/certificates/cert-2.png",
+      "/certificates/cert-3.png",
+    ],
+    startups: [
+      "/certificates/startup1.png",
+      "/certificates/startup2.png",
+      "/certificates/startup3.png",
+    ],
+    outros: [
+      "/certificates/react1.png",
+      "/certificates/frontend1.png",
+      "/certificates/git1.png",
+    ],
+  };
+
+  function openModal(list) {
+    setCertificates(list);
+    setCurrentIndex(0);
+    setOpen(true);
+  }
+
+  function closeModal() {
+    setOpen(false);
+  }
+
+  function next() {
+    setCurrentIndex((prev) =>
+      prev < certificates.length - 1 ? prev + 1 : prev
+    );
+  }
+
+  function prev() {
+    setCurrentIndex((prev) => (prev > 0 ? prev - 1 : prev));
+  }
 
   return (
-    <section className="certifications" id="certifications">
-      <h2>Certificações</h2>
-      <p className='certifications-description'>
-        Certificações obtidas ao longo da minha trajetória educacional e profissional. Clique para visualizar cada certificado.
-      </p>
+    <>
+      <section className="certifications" id="certifications">
+        <h2>Certificações</h2>
 
-      <ul className="certifications-list">
-        <li>
-          <button onClick={() => setSelectedCert('/certificates/cert-1.jpg')}>
-            Iniciação Científica - CIPEEX
-          </button>
-          <span>2025</span>
-        </li>
+        <p className="certifications-description">
+          Formação acadêmica e cursos complementares realizados ao longo da minha trajetória.
+        </p>
 
-        <li>
-          <button onClick={() => setSelectedCert('/certificates/cert-2.png')}>
-            Nome da Certificação
-          </button>
-          <span>Ano</span>
-        </li>
+        <div className="certifications-cards">
+          {/* FACULDADE */}
+          <div className="certification-card">
+            <h3>Faculdade</h3>
+            <div className="divider" />
 
-        <li>
-          <button onClick={() => setSelectedCert('/certificates/cert-2.png')}>
-            Nome da Certificação
-          </button>
-          <span>Ano</span>
-        </li>
+            <ul>
+              <li>Iniciação Científica (CIPEEX)</li>
+              <li>Engenharia de Software</li>
+              <li>Arquitetura de Computadores</li>
+              <li>Programação e Estruturas de Dados</li>
+            </ul>
 
-        <li>
-          <button onClick={() => setSelectedCert('/certificates/cert-2.png')}>
-            Nome da Certificação
-          </button>
-          <span>Ano</span>
-        </li>
+            <button
+              className="view-certificates"
+              onClick={() => openModal(certificatesData.faculdade)}
+            >
+              Ver certificados
+            </button>
+          </div>
 
-        <li>
-          <button onClick={() => setSelectedCert('/certificates/cert-2.png')}>
-            Nome da Certificação
-          </button>
-          <span>Ano</span>
-        </li>
+          {/* SEBRAE / STARTUPS */}
+          <div className="certification-card">
+            <h3>Startups</h3>
+            <div className="divider" />
 
-        <li>
-          <button onClick={() => setSelectedCert('/certificates/cert-2.png')}>
-            Nome da Certificação
-          </button>
-          <span>Ano</span>
-        </li>
+            <ul>
+              <li>Empreendedorismo</li>
+              <li>Gestão de Negócios</li>
+              <li>Inovação e Startups</li>
+            </ul>
 
-        <li>
-          <button onClick={() => setSelectedCert('/certificates/cert-2.png')}>
-            Nome da Certificação
-          </button>
-          <span>Ano</span>
-        </li>
+            <button
+              className="view-certificates"
+              onClick={() => openModal(certificatesData.startups)}
+            >
+              Ver certificados
+            </button>
+          </div>
 
-        <li>
-          <button onClick={() => setSelectedCert('/certificates/cert-2.png')}>
-            Nome da Certificação
-          </button>
-          <span>Ano</span>
-        </li>
+          {/* OUTROS CURSOS */}
+          <div className="certification-card">
+            <h3>Outros Cursos</h3>
+            <div className="divider" />
 
-        <li>
-          <button onClick={() => setSelectedCert('/certificates/cert-2.png')}>
-            Nome da Certificação
-          </button>
-          <span>Ano</span>
-        </li>
+            <ul>
+              <li>Front-end (HTML, CSS, JavaScript)</li>
+              <li>React</li>
+              <li>Versionamento com Git</li>
+            </ul>
 
-        <li>
-          <button onClick={() => setSelectedCert('/certificates/cert-2.png')}>
-            Nome da Certificação
-          </button>
-          <span>Ano</span>
-        </li>
-
-        <li>
-          <button onClick={() => setSelectedCert('/certificates/cert-2.png')}>
-            Nome da Certificação
-          </button>
-          <span>Ano</span>
-        </li>
-
-        <li>
-          <button onClick={() => setSelectedCert('/certificates/cert-2.png')}>
-            Nome da Certificação
-          </button>
-          <span>Ano</span>
-        </li>
-
-      </ul>
-
-      {selectedCert && (
-        <div className="modal" onClick={() => setSelectedCert(null)}>
-          <div className="modal-content">
-            <img src={selectedCert} alt="Certificado" />
+            <button
+              className="view-certificates"
+              onClick={() => openModal(certificatesData.outros)}
+            >
+              Ver certificados
+            </button>
           </div>
         </div>
+      </section>
+
+      {open && (
+        <ModalCertificates
+          certificates={certificates}
+          currentIndex={currentIndex}
+          onClose={closeModal}
+          onNext={next}
+          onPrev={prev}
+        />
       )}
-    </section>
+    </>
   );
 }
