@@ -1,6 +1,6 @@
 import "./modalCertificates.css";
 import { motion, AnimatePresence } from "framer-motion";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const slideVariants = {
     enter: (direction) => ({
@@ -27,24 +27,49 @@ export default function ModalCertificates({
 }) {
     const [visualIndex, setVisualIndex] = useState(currentIndex);
 
+    // 🔒 trava scroll preservando posição (mesma lógica da Navbar mobile)
+    useEffect(() => {
+        const scrollY = window.scrollY;
+
+        document.body.style.position = "fixed";
+        document.body.style.top = `-${scrollY}px`;
+        document.body.style.width = "100%";
+
+        return () => {
+            document.body.style.position = "";
+            document.body.style.top = "";
+            document.body.style.width = "";
+
+            window.scrollTo(0, scrollY);
+        };
+    }, []);
+
     if (!certificates || certificates.length === 0) return null;
 
     return (
         <div className="modal-overlay" onClick={onClose}>
-            <div className="modal-carousel" onClick={(e) => e.stopPropagation()}>
+            <span className="modal-hint">Clique fora para fechar</span>
+
+            <div
+                className="modal-carousel"
+                onClick={(e) => e.stopPropagation()}
+            >
                 <button className="modal-close" onClick={onClose}>
                     ×
                 </button>
 
+
+                <div className="nav-mobile">
                 <button className="nav prev" onClick={onPrev}>
                     ‹
                 </button>
                 <button className="nav next" onClick={onNext}>
                     ›
                 </button>
+                </div>
+
 
                 <div className="carousel-track">
-                    {/* Preview esquerdo */}
                     {certificates[visualIndex - 1] && (
                         <img
                             src={certificates[visualIndex - 1]}
@@ -53,7 +78,6 @@ export default function ModalCertificates({
                         />
                     )}
 
-                    {/* SLOT CENTRAL */}
                     <div className="active-slot">
                         <AnimatePresence
                             mode="wait"
@@ -74,12 +98,14 @@ export default function ModalCertificates({
                                 initial="enter"
                                 animate="center"
                                 exit="exit"
-                                transition={{ duration: 0.35, ease: "easeInOut" }}
+                                transition={{
+                                    duration: 0.35,
+                                    ease: "easeInOut",
+                                }}
                             />
                         </AnimatePresence>
                     </div>
 
-                    {/* Preview direito */}
                     {certificates[visualIndex + 1] && (
                         <img
                             src={certificates[visualIndex + 1]}

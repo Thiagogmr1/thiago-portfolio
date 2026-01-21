@@ -5,14 +5,15 @@
 .modal-overlay {
     position: fixed;
     inset: 0;
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.233);
     backdrop-filter: blur(10px);
     display: flex;
     align-items: center;
     justify-content: center;
     z-index: 9999;
+    overscroll-behavior: contain;
+    touch-action: none;
 }
-
 
 /* ==============================
    MODAL
@@ -32,20 +33,44 @@
 
 .modal-close {
     position: absolute;
-    top: -48px;
-    right: 0;
-    background: none;
-    border: none;
-    color: white;
-    font-size: 1.6rem;
+    top: -18px;
+    right: -184px;
+    width: 44px;
+    height: 44px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+    border: 1px solid rgba(18, 198, 66, 0.817);
+    background: rgba(0, 0, 0, 0.55);
+
+    color: #4f9cff;
+    font-size: 1.7rem;
+    line-height: 1;
+
     cursor: pointer;
-    opacity: 0.7;
-    transition: opacity 0.2s ease, transform 0.2s ease;
+    z-index: 10;
+
+    backdrop-filter: blur(6px);
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
 }
 
 .modal-close:hover {
-    opacity: 1;
-    transform: scale(1.1);
+    background: #4f9cff;
+    color: #000;
+    transform: rotate(90deg) scale(1.08);
+    box-shadow: 0 8px 24px rgba(79, 156, 255, 0.45);
+}
+
+.modal-close:active {
+    transform: rotate(90deg) scale(0.96);
 }
 
 
@@ -66,7 +91,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 2.5rem;
+    font-size: 2.9rem;
     color: white;
     cursor: pointer;
     transition: all 0.25s ease;
@@ -79,11 +104,11 @@
 }
 
 .nav.prev {
-    left: -150px;
+    left: -190px;
 }
 
 .nav.next {
-    right: -150px;
+    right: -190px;
 }
 
 
@@ -137,7 +162,7 @@
 ============================== */
 
 .certificate.active {
-    width: 420px;
+    width: 590px;
     transform: scale(1);
     z-index: 3;
 }
@@ -148,7 +173,7 @@
 ============================== */
 
 .certificate.preview {
-    width: 240px;
+    width: 280px;
     opacity: 0.45;
     filter: blur(2px);
     transform: scale(0.88);
@@ -158,33 +183,119 @@
 
 /* Preview esquerdo */
 .certificate.preview.left {
-    transform: translateX(-20px) scale(0.88);
+    transform: translateX(-50px) scale(0.88);
 }
 
 /* Preview direito */
 .certificate.preview.right {
-    transform: translateX(20px) scale(0.88);
+    transform: translateX(50px) scale(0.88);
 }
 
+/* ==============================
+   ANIMAÇÃO DE TEXTO FECHAR
+============================== */
+
+.modal-hint {
+    position: fixed;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    animation: fadeInDelay 0.8s ease forwards;
+    pointer-events: none;
+}
 
 /* ==============================
    RESPONSIVO
 ============================== */
 
 @media (max-width: 768px) {
+        .nav:hover {
+                transform: scale(1.1);
+            }
+
+    /* ===== ESTRUTURA ===== */
+
+    .modal-carousel {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 18px;
+    }
+
+    /* CERTIFICADO */
     .certificate.active {
-        width: 300px;
+        width: 380px;
     }
 
     .certificate.preview {
         display: none;
     }
 
+    /* ===== CARROSSEL ===== */
+
+    .carousel-track {
+        order: 1;
+        display: flex;
+        justify-content: center;
+    }
+
+    /* ===== LINHA DE NAVEGAÇÃO ===== */
+
+   /* container dos botões no mobile */
+   .nav-mobile {
+       display: none;
+   }
+
+   @media (max-width: 768px) {
+       .nav-mobile {
+           display: flex;
+           gap: 200px;
+           align-items: center;
+           justify-content: center;
+           order: 2;
+       }
+
+       .nav {
+           position: static;
+           transform: none;
+
+           width: 48px;
+           height: 48px;
+           font-size: 2.2rem;
+
+           display: flex;
+           align-items: center;
+           justify-content: center;
+           margin-top: 40px;
+       }
+
+   }
+
+    /* container virtual da linha */
     .nav.prev {
-        left: 8px;
+        margin-right: 12px;
     }
 
     .nav.next {
-        right: 8px;
+        margin-left: 12px;
+    }
+
+    /* ===== BOTÃO FECHAR ===== */
+
+    .modal-close {
+        position: fixed;
+        top: 100px;
+        right: 12px;
+        z-index: 10001;
+    }
+
+    /* ===== TEXTO FECHAR ===== */
+    .modal-hint {
+        width: 100%;
+        text-align: center;
     }
 }

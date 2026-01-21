@@ -35,3 +35,8 @@ body {
 html {
     scrollbar-gutter: stable;
 }
+
+.app-wrapper.modal-open {
+    overflow: hidden;
+    height: 100vh;
+}
