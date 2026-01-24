@@ -69,12 +69,14 @@ export default function About({ isSidebarOpen, setIsSidebarOpen, setHighlightCon
                 <p className="company">AcomGest | MediTrack</p>
                 <br />
                 <p className="description">
-                  Atuo como Desenvolvedor na FTT – Fábrica de Tecnologias Turing, fábrica-escola da UniEVANGÉLICA, onde participo do desenvolvimento 
-                  de softwares seguindo metodologias ágeis, com uso de Scrum e Kanban, trabalho colaborativo e boas práticas de 
-                  Engenharia de Software.
-                  Atualmente, sou fundador e CEO das startups AcomGest e MediTrack, projetos em fase inicial criados no ambiente acadêmico, voltados 
-                  respectivamente ao setor agro/veterinário e à saúde humana. Atuo na idealização, desenvolvimento e visão de produto, sendo também 
-                  bolsista FUNADESP em um dos projetos.
+                  Atuo como Desenvolvedor na FTT – Fábrica de Tecnologias Turing, fábrica-escola da UniEVANGÉLICA, participando do desenvolvimento
+                  de softwares com base em metodologias ágeis, como Scrum e Kanban, além da aplicação de boas práticas de Engenharia de Software e 
+                  trabalho colaborativo.
+                  Sou fundador e CEO das startups AcomGest e MediTrack, projetos concebidos no ambiente acadêmico e atualmente em fase inicial, voltados, 
+                  respectivamente, aos setores agro/veterinário e de saúde humana. Nesses projetos, atuo diretamente na idealização, no desenvolvimento técnico 
+                  e na definição da visão de produto, sendo bolsista FUNADESP em um deles.
+                  Além disso, concluí uma Iniciação Científica com duração de um ano, resultando na produção e publicação de um artigo científico, o que 
+                  fortaleceu minha experiência em pesquisa, escrita acadêmica e investigação aplicada à tecnologia.
                 </p>
               </div>
             </section>

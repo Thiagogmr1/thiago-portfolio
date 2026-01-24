@@ -82,13 +82,10 @@ export default function Skills() {
 
           <div className="skill-group">
             <h3>Learning more...</h3>
-            <div className="skill-tags">
-              {skillsData.Learning.map((skill, idx) => (
-                <span key={idx} className="skill-tag" style={{ '--skill-color': skill.color }}>
-                  <Icon icon={skill.icon} className="skill-icon" />
-                  <span className="skill-name">{skill.name}</span>
-                </span>
-              ))}
+
+            <div className="learning-loader-wrapper">
+              <span className="learning-loader"></span>
+              <span className="learning-text">Exploring new technologies</span>
             </div>
           </div>
 
