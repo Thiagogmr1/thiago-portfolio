@@ -32,45 +32,34 @@
 ============================== */
 
 .modal-close {
-    position: absolute;
+position: absolute;
     top: -18px;
     right: -184px;
     width: 44px;
     height: 44px;
-
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    font-size: 24px;
+    font-weight: 300;
+    border: 1px solid rgb(14, 118, 255);
+    cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-
-    border-radius: 50%;
-    border: 1px solid rgba(18, 198, 66, 0.817);
-    background: rgba(0, 0, 0, 0.55);
-
-    color: #4f9cff;
-    font-size: 1.7rem;
-    line-height: 1;
-
-    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
     z-index: 10;
-
-    backdrop-filter: blur(6px);
-
-    transition:
-        background 0.25s ease,
-        color 0.25s ease,
-        transform 0.25s ease,
-        box-shadow 0.25s ease;
+    backdrop-filter: blur(10px);
 }
 
 .modal-close:hover {
-    background: #4f9cff;
-    color: #000;
-    transform: rotate(90deg) scale(1.08);
-    box-shadow: 0 8px 24px rgba(79, 156, 255, 0.45);
+background: rgba(255, 255, 255, 0.15);
+    border-color: rgb(14, 118, 255);
+    transform: scale(1.1) rotate(90deg);
 }
 
 .modal-close:active {
-    transform: rotate(90deg) scale(0.96);
+    transform: scale(0.95) rotate(90deg);
 }
 
 
