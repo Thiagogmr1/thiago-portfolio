@@ -23,6 +23,9 @@ export default function Skills() {
       { name: 'Scrum', icon: 'mdi:format-list-checks', color: '#00C853' },
       { name: 'UI/UX', icon: 'mdi:palette-outline', color: '#c92e62' },
       { name: 'Agile', icon: 'mdi:speedometer', color: '#0096FF' }
+    ],
+    Learning: [
+
     ]
   };
 
@@ -69,6 +72,18 @@ export default function Skills() {
             <h3>Práticas</h3>
             <div className="skill-tags">
               {skillsData.Práticas.map((skill, idx) => (
+                <span key={idx} className="skill-tag" style={{ '--skill-color': skill.color }}>
+                  <Icon icon={skill.icon} className="skill-icon" />
+                  <span className="skill-name">{skill.name}</span>
+                </span>
+              ))}
+            </div>
+          </div>
+
+          <div className="skill-group">
+            <h3>Learning more...</h3>
+            <div className="skill-tags">
+              {skillsData.Learning.map((skill, idx) => (
                 <span key={idx} className="skill-tag" style={{ '--skill-color': skill.color }}>
                   <Icon icon={skill.icon} className="skill-icon" />
                   <span className="skill-name">{skill.name}</span>
