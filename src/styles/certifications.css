@@ -227,6 +227,8 @@
 
     .certification-card {
         padding: 25px;
+        height: auto;
+        min-height: 460px;
     }
 }
 
