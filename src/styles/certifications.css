@@ -174,8 +174,9 @@
 }
 
 .certification-card ul li:hover {
-    color: #fff;
-    transform: translateX(5px);
+    color: #0096ff;
+    transform: translateX(12px);
+
 }
 
 /* ===================================
