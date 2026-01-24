@@ -10,14 +10,14 @@ export default function Skills() {
       { name: 'CSS3', icon: 'vscode-icons:file-type-css', color: '#1572B6' },
       { name: 'Tailwind CSS', icon: 'logos:tailwindcss-icon', color: '#06B6D4' }
     ],
-    tools: [
+    Ferramentas: [
       { name: 'Git', icon: 'logos:git-icon', color: '#F05032' },
       { name: 'GitHub', icon: 'mdi:github', color: '#ffffff' },
       { name: 'VS Code', icon: 'vscode-icons:file-type-vscode', color: '#007ACC' },
       { name: 'Figma', icon: 'logos:figma', color: '#F24E1E' },
-      { name: 'IA', icon: 'healthicons:artificial-intelligence-outline', color: '#5f5aed' }
+      { name: 'IAs', icon: 'healthicons:artificial-intelligence-outline', color: '#5f5aed' }
     ],
-    Practices: [
+    Práticas: [
       { name: 'Responsive Design', icon: 'material-symbols:devices', color: '#00D9FF' },
       { name: 'Web Performance', icon: 'carbon:dashboard-reference', color: '#FFD700' },
       { name: 'Scrum', icon: 'mdi:format-list-checks', color: '#00C853' },
@@ -32,9 +32,9 @@ export default function Skills() {
 
         {/* Header com Texto */}
         <div className="skills-intro">
-          <h2>Skills & Technologies</h2>
+          <h2>Skills & Tecnologias</h2>
           <p className="skills-description">
-            I build modern web applications focused on clean code, great UX, and performance.
+            Tecnologias e práticas que utilizo no dia a dia para criar interfaces funcionais, agradáveis e eficientes.
           </p>
         </div>
 
@@ -54,9 +54,9 @@ export default function Skills() {
           </div>
 
           <div className="skill-group">
-            <h3>Tools</h3>
+            <h3>Ferramentas</h3>
             <div className="skill-tags">
-              {skillsData.tools.map((skill, idx) => (
+              {skillsData.Ferramentas.map((skill, idx) => (
                 <span key={idx} className="skill-tag" style={{ '--skill-color': skill.color }}>
                   <Icon icon={skill.icon} className="skill-icon" />
                   <span className="skill-name">{skill.name}</span>
@@ -66,9 +66,9 @@ export default function Skills() {
           </div>
 
           <div className="skill-group">
-            <h3>Practices</h3>
+            <h3>Práticas</h3>
             <div className="skill-tags">
-              {skillsData.Practices.map((skill, idx) => (
+              {skillsData.Práticas.map((skill, idx) => (
                 <span key={idx} className="skill-tag" style={{ '--skill-color': skill.color }}>
                   <Icon icon={skill.icon} className="skill-icon" />
                   <span className="skill-name">{skill.name}</span>

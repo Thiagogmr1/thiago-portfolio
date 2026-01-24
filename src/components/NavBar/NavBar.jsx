@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import '../NavBar/NavBar.css';
 import logoReact from '../../assets/logoReact.svg';
 
-const sections = ['hero', 'projects', 'skills', 'achievements', 'certifications'];
+const sections = ['hero', 'skills', 'Conquistas', 'Certificações'];
 
 export default function Navbar() {
 

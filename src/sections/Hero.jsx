@@ -64,7 +64,7 @@ export default function Hero() {
             </h1>
 
             <p>Product Designer & Front-end Developer</p>
-            <p>Founder: AcomGest e MediTrack</p>
+            <p>CEO: AcomGest e MediTrack</p>
 
             <div className="hero-buttons">
               <button

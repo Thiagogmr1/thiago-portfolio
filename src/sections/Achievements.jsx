@@ -2,7 +2,7 @@ import '../styles/achievements.css';
 
 export default function Achievements() {
   return (
-    <section className="achievements" id="achievements">
+    <section className="achievements" id="Conquistas">
       <h2>Conquistas & Prêmios</h2>
       <p className="achievements-subtitle">Aqui estão algumas das minhas conquistas e prêmios mais significativos.
         

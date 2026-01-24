@@ -47,7 +47,7 @@ export default function Certifications() {
 
   return (
     <>
-      <section className="certifications" id="certifications">
+      <section className="certifications" id="Certificações">
         <h2>Certificações</h2>
 
         <p className="certifications-description">
