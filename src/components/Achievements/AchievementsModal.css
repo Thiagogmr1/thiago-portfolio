@@ -13,6 +13,8 @@
     justify-content: center;
     z-index: 1000;
     animation: overlayFadeIn 0.3s ease-out;
+    overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
 }
 
 @keyframes overlayFadeIn {
@@ -91,13 +93,6 @@
     position: relative;
 }
 
-/* Scrollbar customizada */
-
-.achievement-header {
-    flex-shrink: 0;
-    margin-bottom: 1.5rem;
-    position: relative;
-}
 
 .achievement-content h3 {
     margin-bottom: 1rem;
@@ -169,7 +164,7 @@
         flex-direction: column;
         width: 92%;
         height: auto;
-        max-height: 85vh;
+        max-height: 90vh;
         border-radius: 16px;
     }
 
@@ -179,8 +174,9 @@
     }
 
     .achievement-content {
-        padding: 1.75rem 1.5rem;
+        padding: 1.5rem;
             max-height: none;
+            overflow-y: auto;
             /* remove qualquer limitação */
     }
 

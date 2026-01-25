@@ -1,18 +1,23 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import "./AchievementsModal.css";
 
 export default function AchievementsModal({ isOpen, onClose, achievement }) {
+    const scrollRef = useRef(0);
 
     useEffect(() => {
         if (isOpen) {
-            document.body.style.overflow = "hidden";
-        } else {
-            document.body.style.overflow = "auto";
-        }
+            scrollRef.current = window.scrollY;
 
-        return () => {
-            document.body.style.overflow = "auto";
-        };
+            document.body.style.position = "fixed";
+            document.body.style.top = `-${scrollRef.current}px`;
+            document.body.style.width = "100%";
+        } else {
+            document.body.style.position = "";
+            document.body.style.top = "";
+            document.body.style.width = "";
+
+            window.scrollTo(0, scrollRef.current);
+        }
     }, [isOpen]);
 
     if (!isOpen || !achievement) return null;
@@ -20,6 +25,7 @@ export default function AchievementsModal({ isOpen, onClose, achievement }) {
     return (
         <div className="achievement-overlay" onClick={onClose}>
             <span className="modal-hint">Clique fora para fechar</span>
+
             <div
                 className="achievement-modal"
                 onClick={(e) => e.stopPropagation()}
@@ -32,13 +38,10 @@ export default function AchievementsModal({ isOpen, onClose, achievement }) {
                     ×
                 </button>
 
-
-                {/* IMAGEM */}
                 <div className="achievement-media">
                     <img src={achievement.image} alt={achievement.title} />
                 </div>
 
-                {/* CONTEÚDO */}
                 <div className="achievement-content">
                     <div className="achievement-header">
                         <h3>{achievement.title}</h3>

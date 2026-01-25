@@ -12,13 +12,11 @@ export default function Achievements() {
       title: "Vencedor do 1º Hackathon da UniEvangélica",
       description: "Reconhecido por apresentar o projeto Meditrack na área da saúde.",
 
-      fullDescription: `O Meditrack nasceu de uma experiência intensa de inovação na UniEVANGÉLICA e ganhou força ao vencer o
-      Hackathon acadêmico da instituição. Essa conquista levou o projeto a avançar para o ambiente de pesquisa e inovação, 
-      sendo contemplado com uma Bolsa de Iniciação Tecnológica. Atualmente, a iniciativa segue em desenvolvimento contínuo 
-      com o apoio da UniEVANGÉLICA e do UniCIETEC.
-      Construído de forma colaborativa por uma equipe multidisciplinar das áreas de Engenharia de Software, Direito e Medicina, 
-      o Meditrack busca unir viabilidade técnica e impacto social, colocando a tecnologia a serviço de soluções mais humanas e 
-      efetivas na área da saúde.`
+      fullDescription: `O Meditrack nasceu de uma experiência intensa de inovação na UniEVANGÉLICA e ganhou destaque ao vencer 
+      o Hackathon acadêmico da instituição. A conquista permitiu a continuidade do projeto no ambiente de pesquisa e inovação, 
+      sendo contemplado com uma Bolsa de Iniciação Tecnológica, com apoio da UniEVANGÉLICA e do UniCIETEC. Desenvolvido de forma 
+      colaborativa por uma equipe multidisciplinar das áreas de Engenharia de Software, Direito e Medicina, o Meditrack une 
+      viabilidade técnica e impacto social na criação de soluções tecnológicas voltadas à área da saúde.`
     },
 
     {
@@ -40,12 +38,11 @@ export default function Achievements() {
       title: "2º Lugar no Hackathon da UFG",
       description: "Equipe AcomGest, reconhecida com o 2º lugar na Olimpíada de Empreendedorismo Universitário da UFG 2025, contemplada com prêmio de R$ 9 mil.",
       
-      fullDescription: `A equipe AcomGest foi contemplada com a premiação de R$ 9 mil ao conquistar o 2º lugar na Olimpíada de Empreendedorismo Universitário da 
-      UFG 2025, em reconhecimento ao desempenho e à inovação da solução desenvolvida para o agronegócio. O projeto é baseado no uso de inteligência artificial e 
-      visão computacional aplicadas à pecuária, com foco na modernização e eficiência do setor.
-      A conquista foi resultado da participação da equipe em uma trilha de capacitação composta por reuniões online, encontros orientativos e workshops estratégicos, 
-      além da adoção de estratégias voltadas à elaboração de documentações técnicas e à construção de pitches competitivos. A equipe contou com o apoio institucional 
-      da UniEVANGÉLICA e do UniCIETEC ao longo do processo.`
+      fullDescription: `A equipe AcomGest conquistou o 2º lugar na Olimpíada de Empreendedorismo Universitário da UFG 2025, sendo 
+      contemplada com uma premiação de R$ 9 mil. O reconhecimento foi resultado do desenvolvimento de uma solução baseada em 
+      inteligência artificial aplicada à pecuária, com foco na inovação e na eficiência do agronegócio. A conquista ocorreu após 
+      a participação em uma trilha de capacitação com reuniões online, workshops e mentorias estratégicas, contando com o apoio 
+      institucional da UniEVANGÉLICA e do UniCIETEC.`
     }
   ];
 
