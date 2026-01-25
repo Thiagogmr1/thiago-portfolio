@@ -1,6 +1,20 @@
+import { useEffect } from "react";
 import "./AchievementsModal.css";
 
 export default function AchievementsModal({ isOpen, onClose, achievement }) {
+
+    useEffect(() => {
+        if (isOpen) {
+            document.body.style.overflow = "hidden";
+        } else {
+            document.body.style.overflow = "auto";
+        }
+
+        return () => {
+            document.body.style.overflow = "auto";
+        };
+    }, [isOpen]);
+
     if (!isOpen || !achievement) return null;
 
     return (

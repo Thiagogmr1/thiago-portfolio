@@ -81,14 +81,17 @@ export default function Skills() {
           </div>
 
           <div className="skill-group">
-            <h3>Learning more...</h3>
+            <h3>Building...</h3>
 
             <div className="learning-loader-wrapper">
-              <span className="learning-loader"></span>
               <span className="learning-text">Exploring new technologies</span>
+              <div className="learning-dots">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
             </div>
           </div>
-
         </div>
 
         {/* Texto Adicional (Opcional) */}
