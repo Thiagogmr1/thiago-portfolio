@@ -24,8 +24,6 @@ export default function AchievementsModal({ isOpen, onClose, achievement }) {
 
     return (
         <div className="achievement-overlay" onClick={onClose}>
-            <span className="modal-hint">Clique fora para fechar</span>
-
             <div
                 className="achievement-modal"
                 onClick={(e) => e.stopPropagation()}
