@@ -4,6 +4,7 @@ import Achievements from './pages/Achievements';
 import Certifications from './pages/Certifications';
 import Skills from './pages/Skills';
 import Footer from './components/Footer/Footer';
+import Projects from './pages/Projects';
 
 function App() {
   return (
@@ -12,11 +13,12 @@ function App() {
 
         <Navbar />
           <Home />
+          <Projects />
           <Skills />
           <Achievements />
           <Certifications />
           <Footer />
-
+          
     </div>
   );
 }

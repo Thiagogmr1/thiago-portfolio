@@ -1,16 +1,16 @@
 import '../Footer/Footer.css';
 import logoReact from '../../assets/logoReact.svg';
-import { FaGithub, FaLinkedin, FaTwitter, FaInstagram, FaEnvelope } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaInstagram, FaEnvelope } from 'react-icons/fa';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   const quickLinks = [
-    { name:  'Home', href: '#hero' },
+    { name:  'Home', href: '#home' },
     { name: 'Projects', href: '#projects' },
     { name: 'Skills', href: '#skills' },
-    { name: 'Achievements', href: '#achievements' },
-    { name: 'Certifications', href: '#certifications' }
+    { name: 'Conquistas', href: '#conquistas' },
+    { name: 'Certificações', href: '#certificações' }
   ];
 
   const socialLinks = [

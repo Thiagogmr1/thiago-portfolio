@@ -2,13 +2,13 @@ import { useState, useEffect } from 'react';
 import '../NavBar/NavBar.css';
 import logoReact from '../../assets/logoReact.svg';
 
-const sections = ['hero', 'skills', 'Conquistas', 'Certificações'];
+const sections = ['home', 'projects', 'skills', 'conquistas', 'certificações'];
 
 export default function Navbar() {
 
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [activeLink, setActiveLink] = useState('hero');
+  const [activeLink, setActiveLink] = useState('home');
 
   useEffect(() => {
     const handleScroll = () => {
@@ -103,7 +103,7 @@ export default function Navbar() {
                 }}
               >
 
-                {section === 'hero' ? 'Home' : section.charAt(0).toUpperCase() + section.slice(1)}
+                {section === 'home' ? 'Home' : section.charAt(0).toUpperCase() + section.slice(1)}
 
               </a>
             </li>

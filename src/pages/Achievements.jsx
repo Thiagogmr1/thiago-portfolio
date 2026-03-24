@@ -52,7 +52,7 @@ export default function Achievements() {
   }
 
   return (
-    <section className="achievements" id="Conquistas">
+    <section className="achievements" id="conquistas">
       <h2>Conquistas & Prêmios</h2>
       <p className="achievements-subtitle">
         Aqui estão algumas das minhas conquistas e prêmios mais significativos. Clique nos cards para saber mais detalhes.
