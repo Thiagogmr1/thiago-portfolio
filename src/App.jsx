@@ -1,8 +1,8 @@
 import Navbar from './components/NavBar/NavBar';
-import Hero from './sections/Hero';
-import Achievements from './sections/Achievements';
-import Certifications from './sections/Certifications';
-import Skills from './sections/Skills';
+import Hero from './pages/Hero';
+import Achievements from './pages/Achievements';
+import Certifications from './pages/Certifications';
+import Skills from './pages/Skills';
 import Footer from './components/Footer/Footer';
 
 function App() {
