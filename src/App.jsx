@@ -1,5 +1,5 @@
 import Navbar from './components/NavBar/NavBar';
-import Hero from './pages/Hero';
+import Home from './pages/Home';
 import Achievements from './pages/Achievements';
 import Certifications from './pages/Certifications';
 import Skills from './pages/Skills';
@@ -11,7 +11,7 @@ function App() {
       <div className="app-wrapper">
 
         <Navbar />
-          <Hero />
+          <Home />
           <Skills />
           <Achievements />
           <Certifications />

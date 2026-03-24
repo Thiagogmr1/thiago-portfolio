@@ -345,13 +345,13 @@
     transform: translateX(5px);
 }
 
-.hero-social-links {
+.home-social-links {
     position: relative;
     z-index: 0;
     overflow: visible;
 }
 
-.hero-social-links.contact-highlight::before {
+.home-social-links.contact-highlight::before {
     content: '';
     position: absolute;
     inset: -14px -50px;

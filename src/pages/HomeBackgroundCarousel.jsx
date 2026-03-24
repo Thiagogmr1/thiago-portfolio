@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import '../styles/heroCarousel.css';
+import '../styles/homeCarousel.css';
 
 import img1 from '../assets/images/carousel/carousel-1.jpg';
 import img2 from '../assets/images/carousel/carousel-2.jpg';
@@ -9,7 +9,7 @@ import img5 from '../assets/images/carousel/carousel-5.jpg';
 
 const images = [img1, img2, img3, img4, img5];
 
-export default function HeroBackgroundCarousel() {
+export default function HomeBackgroundCarousel() {
   const [activeIndex, setActiveIndex] = useState(0);
 
   useEffect(() => {
@@ -23,7 +23,7 @@ export default function HeroBackgroundCarousel() {
 
   return (
     <div className="carousel-container">
-      <div className="hero-carousel">
+      <div className="home-carousel">
         {images.map((img, index) => (
           <div
             key={index}

@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import profile from '../assets/images/Perfil.jpg';
-import '../styles/hero.css';
+import '../styles/home.css';
 import { FaLinkedin, FaGithub, FaInstagram, FaEnvelope, FaDownload  } from 'react-icons/fa';
 import About from './About';
 
-export default function Hero() {
+export default function Home() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [highlightContacts, setHighlightContacts] = useState(false);
 
@@ -14,12 +14,12 @@ export default function Hero() {
 
   return (
     <>
-      <section className="hero" id="hero">
+      <section className="home" id="home">
 
         {/* Bloco visual: foto + redes */}
-        <div className="hero-profile">
-          <div className="hero-profile-image">
-            <span className="hero-profile-halo" />
+        <div className="home-profile">
+          <div className="home-profile-image">
+            <span className="home-profile-halo" />
             <img
               src={profile}
               alt="Foto profissional de Thiago Gabriel"
@@ -27,13 +27,13 @@ export default function Hero() {
           </div>
 
           <div
-            id="hero-contacts"
-            className={`hero-social-links ${
+            id="home-contacts"
+            className={`home-social-links ${
               highlightContacts ? 'contact-highlight' : ''
             }`}
           >
   
-          <div className="hero-profile-socials">
+          <div className="home-profile-socials">
             <a href="https://www.linkedin.com/in/thiagogabriel10" target="_blank" rel="noopener noreferrer">
               <FaLinkedin />
             </a>
@@ -56,8 +56,8 @@ export default function Hero() {
       </div>
       
         {/* Conteúdo textual */}
-        <div className="hero-content">
-          <div className="hero-text">
+        <div className="home-content">
+          <div className="home-text">
             <h1>
               {greeting}, eu sou o <br />
               Thiago Gabriel
@@ -66,7 +66,7 @@ export default function Hero() {
             <p>Product Designer & Front-end Developer</p>
             <p>CEO: AcomGest e MediTrack</p>
 
-            <div className="hero-buttons">
+            <div className="home-buttons">
               <button
                 className="button-primary"
                 onClick={() => setIsSidebarOpen(true)}

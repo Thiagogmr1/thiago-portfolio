@@ -1,4 +1,4 @@
-.hero-carousel {
+.home-carousel {
     position: absolute;
     top: 0;
     right: 0;
@@ -38,12 +38,12 @@
 
 /* Mobile: ocultar */
 @media (max-width: 768px) {
-    .hero-carousel {
+    .home-carousel {
         display: none;
     }
 }
 
-.hero-carousel {
+.home-carousel {
     position: absolute;
     top: 0;
     right: 0;
