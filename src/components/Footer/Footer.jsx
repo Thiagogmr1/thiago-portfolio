@@ -104,9 +104,6 @@ export default function Footer() {
         <p className="copyright">
           © {currentYear} <span className="highlight">Thiago Gabriel</span>.  Todos os direitos reservados. 
         </p>
-        <p className="made-with">
-          Feito com  <span className="react-icon"> React. </span>
-        </p>
       </div>
     </footer>
   );

@@ -75,7 +75,7 @@ export default function Home() {
               </button>
 
                <a
-                  href="/cv/Thiago_Gabriel_CV.pdf"
+                href="/cv/Currículo Atualizado - Thiago.pdf"
                     download
                     className="button-secondary button-download"
                 >
