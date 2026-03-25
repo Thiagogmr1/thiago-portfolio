@@ -37,7 +37,7 @@ export default function Footer() {
             <h3>Thiago Gabriel</h3>
           </div>
           <p className="footer-description">
-            Desenvolvedor Front-end e Product Designer, criando experiências digitais com atenção aos detalhes, usabilidade e inovação..
+            Desenvolvedor Front-end e Product Designer, criando experiências digitais com atenção aos detalhes, usabilidade e inovação...
           </p>
         </div>
 

@@ -52,7 +52,7 @@ export default function About({ isSidebarOpen, setIsSidebarOpen, setHighlightCon
           {/* Conteúdo Principal */}
           <div className="sidebar-body">
             <section className="sidebar-section">
-              <h3>🎯 Sobre Mim</h3>
+              <h3>Sobre Mim</h3>
               <p>
                 Sou Thiago Gabriel, Desenvolvedor Front-end e Product Designer na FTT – Fábrica de Tecnologias Turing, na Universidade 
                 Evangélica de Goiás - UniEVANGÉLICA, onde também curso Engenharia de Software. Atualmente, sou fundador de duas startups: 
@@ -63,7 +63,7 @@ export default function About({ isSidebarOpen, setIsSidebarOpen, setHighlightCon
             </section>
 
             <section className="sidebar-section">
-              <h3>💼 Experiência</h3>
+              <h3>Experiência</h3>
               <div className="experience-item">
                 <h4>Founder & CEO</h4>
                 <p className="company">AcomGest | MediTrack</p>
@@ -82,7 +82,7 @@ export default function About({ isSidebarOpen, setIsSidebarOpen, setHighlightCon
             </section>
 
             <section className="sidebar-section">
-              <h3>🚀 Habilidades</h3>
+              <h3>Habilidades</h3>
               <div className="skills-grid">
                 <span className="skill-tag">Dev</span>
                 <span className="skill-tag">React</span>
@@ -95,7 +95,7 @@ export default function About({ isSidebarOpen, setIsSidebarOpen, setHighlightCon
             </section>
 
             <section className="sidebar-section">
-              <h3>🎓 Formação</h3>
+              <h3>Formação</h3>
               <div className="education-item">
                 <h4>Engenharia de Software</h4>
                 <p className="institution">Instituição : Universidade Evangélica de Goiás - UniEVANGÉLICA</p>

@@ -12,13 +12,13 @@
     margin: 0 auto;
     position: relative;
     z-index: 1;
-    padding: 0 20px;
+
 }
 
 /* Título */
 .projects-title {
     text-align: center;
-    font-size: 2.2rem;
+    font-size: 2rem;
     font-weight: 700;
     color: #fff;
     margin-bottom: 3rem;
@@ -42,7 +42,7 @@
 .projects-grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 1.5rem;
+    gap: 2rem;
 }
 
 /* CARD */
@@ -83,7 +83,7 @@
 
 /* DESCRIPTION */
 .project-description {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     color: rgba(255, 255, 255, 0.6);
     margin: 10px 0;
 }
@@ -118,28 +118,113 @@
     gap: 10px;
 }
 
+.project-image-wrapper {
+    position: relative;
+}
+
+.github-btn {
+  position: absolute;
+  bottom: -14px;
+  right: 14px;
+
+  background: rgba(0, 0, 0, 0.9);
+  color: #fff;
+  padding: 6px 12px;
+  font-size: 0.75rem;
+  border-radius: 20px;
+  text-decoration: none;
+
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255,255,255,0.1);
+
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+  transition: 0.25s;
+}
+
+.github-btn:hover {
+  background: #ffffff;
+  color: #000000;
+  font-weight: 600;
+  box-shadow: 0 0 10px rgba(0,150,255,0.6);
+}
+
+.project-content {
+    padding-top: 24px;
+}
+
+.figma-btn {
+    position: absolute;
+    bottom: -54px;
+    /* right: 300px; */
+    right: 15px;
+    background: rgba(0, 0, 0, 0.9);
+    color: #fff;
+    padding: 6px 12px;
+    font-size: 0.75rem;
+    border-radius: 20px;
+    text-decoration: none;
+
+    backdrop-filter: blur(6px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+    transition: 0.25s;
+}
+
+.figma-btn:hover {
+    background: #ffffff;
+    color: #d31414;
+    font-weight: 600;
+    box-shadow: 0 0 10px rgba(0, 150, 255, 0.6);
+}
+
 /* BUTTONS */
 .btn-primary-custom {
-    background: #0096ff;
+background: #0096ff;
     color: #fff;
     padding: 6px 12px;
     border-radius: 6px;
     font-size: 0.8rem;
     text-decoration: none;
+    transition: 0.2s;
+}
+
+.btn-primary-custom:hover {
+    background: #0077cc;
+    box-shadow: 0 0 8px rgba(0, 150, 255, 0.5);
 }
 
 .btn-outline-custom {
-    border: 1px solid #0096ff;
+    border: 1px solid rgba(0, 150, 255, 0.5);
     color: #0096ff;
     padding: 6px 12px;
     border-radius: 6px;
     font-size: 0.8rem;
     text-decoration: none;
+    transition: 0.2s;
 }
 
 .btn-outline-custom:hover {
-    background: #0096ff;
+    background: rgba(0, 150, 255, 0.1);
+    border-color: #0096ff;
     color: #fff;
+}
+
+/* TECH */
+.tech-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: 0.2s;
+}
+
+.tech-badge:hover {
+    transform: translateY(-2px);
+}
+
+.tech-icon {
+    width: 16px;
+    height: 16px;
 }
 
 /* RESPONSIVO */
