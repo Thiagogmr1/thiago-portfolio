@@ -16,7 +16,6 @@ export default function Footer() {
   const socialLinks = [
     { icon: <FaLinkedin />, href: 'https://linkedin.com/in/thiagogabriel10', label:  'LinkedIn' },
     { icon: <FaGithub />, href: 'https://github.com/Thiagogmr1', label: 'GitHub' },
-    { icon: <FaInstagram />, href: 'https://www.instagram.com/thiagogabriel.7/', label: 'Instagram' },
   ];
 
   const handleLinkClick = (href) => {

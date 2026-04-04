@@ -40,9 +40,6 @@ export default function Home() {
             <a href="https://github.com/Thiagogmr1" target="_blank" rel="noopener noreferrer">
               <FaGithub />
             </a>
-            <a href="https://www.instagram.com/thiagogabriel.7/" target="_blank" rel="noopener noreferrer">
-              <FaInstagram />
-            </a>
             <a
               href="https://mail.google.com/mail/?view=cm&fs=1&to=thiagogab.20@gmail.com&su=Contato%20pelo%20Portfólio"
               target="_blank"
