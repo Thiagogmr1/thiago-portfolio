@@ -61,7 +61,7 @@ export default function Home() {
             </h1>
 
             <p>Product Designer & Front-end Developer</p>
-            <p>CEO: AcomGest e MediTrack</p>
+            <p>CEO: MediTrack</p>
 
             <div className="home-buttons">
               <button

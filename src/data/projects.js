@@ -11,7 +11,7 @@ const projects = [
             { name: "CSS", icon: "vscode-icons:file-type-css", color: "#1572B6" }
         ],
         image: "/img/CRUD.png",
-        github: "https://github.com/Thiagogmr1/Cadastro-em-PHP",
+        // github: "https://github.com/Thiagogmr1/Cadastro-em-PHP",
     },
     {
         id: 2,
@@ -28,7 +28,7 @@ const projects = [
             { name: "Figma", icon: "logos:figma", color: "#F24E1E" }
         ],
         image: "/img/Dash.png",
-        github: "https://github.com/seuuser/projeto",
+        // github: "https://github.com/seuuser/projeto",
         figma: "https://www.figma.com/design/Wimrw7irhV6F231UQRreun/Dashboard---FTT?node-id=1461-3294&t=A3stDJ0kOZfQTaQU-1",
         demo: ""
     },
@@ -43,8 +43,8 @@ const projects = [
             { name: "SCSS", icon: "vscode-icons:file-type-scss", color: "#CC6699" }
         ],
         image: "/img/Angular.png",
-        github: "https://github.com/Thiagogmr1/Angular-task-dashboard",
-        demo: ""
+        // github: "https://github.com/Thiagogmr1/Angular-task-dashboard",
+        demo: "https://angular-task-dashboard.vercel.app/dashboard"
     }
 ];
 

@@ -1,8 +1,14 @@
 import { Icon } from "@iconify/react";
 
 function ProjectCard({ project }) {
+    const openDemo = () => {
+        if (project.demo) {
+            window.open(project.demo, "_blank");
+        }
+    };
+
     return (
-        <div className="project-card">
+        <div className="project-card" onClick={openDemo}>
             <div className="project-image-wrapper">
                 <img
                     src={project.image || "https://via.placeholder.com/800x500"}
@@ -11,12 +17,25 @@ function ProjectCard({ project }) {
                 />
 
                 {project.github && (
-                    <a href={project.github} className="github-btn">
+                    <a
+                        href={project.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="github-btn"
+                        onClick={(e) => e.stopPropagation()}
+                    >
                         GitHub
                     </a>
                 )}
+
                 {project.figma && (
-                    <a href={project.figma} className="figma-btn">
+                    <a
+                        href={project.figma}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="figma-btn"
+                        onClick={(e) => e.stopPropagation()}
+                    >
                         Figma
                     </a>
                 )}
@@ -43,11 +62,6 @@ function ProjectCard({ project }) {
                 </div>
 
                 <div className="project-links">
-                    {project.demo && (
-                        <a href={project.demo} className="btn-primary-custom">
-                            Live
-                        </a>
-                    )}
                 </div>
             </div>
         </div>

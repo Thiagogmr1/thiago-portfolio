@@ -47,11 +47,17 @@
 
 /* CARD */
 .project-card {
+    display: block;
+    text-decoration: none;
+    color: inherit;
     background: rgba(255, 255, 255, 0.02);
     border: 1px solid rgba(255, 255, 255, 0.05);
     border-radius: 12px;
     overflow: hidden;
     transition: all 0.3s ease;
+    cursor: pointer;
+    height: 100%;
+
 }
 
 .project-card:hover {
@@ -154,7 +160,7 @@
 
 .figma-btn {
     position: absolute;
-    bottom: -54px;
+    bottom: -14px;
     /* right: 300px; */
     right: 15px;
     background: rgba(0, 0, 0, 0.9);

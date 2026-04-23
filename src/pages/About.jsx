@@ -55,8 +55,7 @@ export default function About({ isSidebarOpen, setIsSidebarOpen, setHighlightCon
               <h3>Sobre Mim</h3>
               <p>
                 Sou Thiago Gabriel, Desenvolvedor Front-end e Product Designer na FTT – Fábrica de Tecnologias Turing, na Universidade 
-                Evangélica de Goiás - UniEVANGÉLICA, onde também curso Engenharia de Software. Atualmente, sou fundador de duas startups: 
-                AcomGest, voltada ao uso de inteligência artificial no setor da pecuária, e MediTrack, focada em soluções para a saúde humana.
+                Evangélica de Goiás - UniEVANGÉLICA, onde também curso Engenharia de Software. Atualmente, sou fundador da MediTrack, uma startup focada em soluções para a saúde humana.
                 Tenho foco em React, mas já desenvolvi projetos utilizando PHP, Ruby, HTML e CSS. Sou comunicativo, colaborativo e atuo como 
                 Product Owner em um dos projetos acadêmicos, o que fortaleceu minha visão de produto e liderança. Possuo inglês em nível intermediário.
               </p>
@@ -66,15 +65,14 @@ export default function About({ isSidebarOpen, setIsSidebarOpen, setHighlightCon
               <h3>Experiência</h3>
               <div className="experience-item">
                 <h4>Founder & CEO</h4>
-                <p className="company">AcomGest | MediTrack</p>
+                <p className="company"> | MediTrack</p>
                 <br />
                 <p className="description">
                   Atuo como Desenvolvedor na FTT – Fábrica de Tecnologias Turing, fábrica-escola da UniEVANGÉLICA, participando do desenvolvimento
                   de softwares com base em metodologias ágeis, como Scrum e Kanban, além da aplicação de boas práticas de Engenharia de Software e 
                   trabalho colaborativo.
-                  Sou fundador e CEO das startups AcomGest e MediTrack, projetos concebidos no ambiente acadêmico e atualmente em fase inicial, voltados, 
-                  respectivamente, aos setores agro/veterinário e de saúde humana. Nesses projetos, atuo diretamente na idealização, no desenvolvimento técnico 
-                  e na definição da visão de produto, sendo bolsista FUNADESP em um deles.
+                  Sou fundador e CEO da MediTrack, um projeto acadêmico em fase inicial voltado ao setor de saúde humana. Atuo na idealização, no desenvolvimento 
+                  técnico e na definição da visão do produto, além de ser bolsista FUNADESP no projeto.
                   Além disso, concluí uma Iniciação Científica com duração de um ano, resultando na produção e publicação de um artigo científico, o que 
                   fortaleceu minha experiência em pesquisa, escrita acadêmica e investigação aplicada à tecnologia.
                 </p>
