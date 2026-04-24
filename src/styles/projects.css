@@ -1,11 +1,13 @@
 /* SECTION */
 .projects {
-    min-height: 70vh;
-    padding: 2rem 1rem;
-    padding-top: calc(var(--navbar-height) - 10px);
+    min-height: auto; /* evita espaço forçado */
+    padding: 1rem 1rem; /* reduz padding geral */
+    padding-top: calc(var(--navbar-height) + 20px);
+    margin-top: calc(-1 * var(--navbar-height));
     position: relative;
     overflow: hidden;
 }
+
 /* Container */
 .projects-container {
     max-width: 1200px;
