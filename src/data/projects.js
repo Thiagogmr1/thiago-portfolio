@@ -3,6 +3,8 @@ const projects = [
         id: 1,
         title: "CRUD de Usuários",
         description: "Sistema completo de CRUD para gerenciamento de usuários.",
+        blocked: true,
+        message: "Projeto não disponível publicamente devido à dependência de infraestrutura backend.",
         techs: [
             { name: "PHP", icon: "logos:php", color: "#777BB4" },
             { name: "MySQL", icon: "logos:mysql", color: "#4479A1" },
@@ -16,8 +18,9 @@ const projects = [
     {
         id: 2,
         title: "Dashboard de Mensagens - WhatsApp",
-        description:
-            "Dashboard de mensagens em tempo real integrado ao WhatsApp via chatbot.",
+        description:"Dashboard de mensagens em tempo real integrado ao WhatsApp via chatbot.",
+        blocked: true,
+        message: "Projeto desenvolvido em ambiente empresarial com acesso restrito. Design disponível para visualização.",
         techs: [
             { name: "React", icon: "logos:react", color: "#61DAFB" },
             { name: "JavaScript", icon: "logos:javascript", color: "#F7DF1E" },
@@ -36,6 +39,7 @@ const projects = [
         id: 3,
         title: "Gestão de Tarefas",
         description: "Sistema CRUD para gerenciamento de tarefas.",
+        blocked: false,
         techs: [
             { name: "Angular", icon: "logos:angular-icon", color: "#DD0031" },
             { name: "TypeScript", icon: "logos:typescript-icon", color: "#3178C6" },

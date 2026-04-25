@@ -22,7 +22,7 @@
 /* Sidebar Principal */
 .about-sidebar {
     position: fixed;
-    top: 8.9%;
+    top: 65px;
     right: -700px;
     width: 560px;
     height: calc(100vh - 80px);
