@@ -9,7 +9,7 @@ function Projects() {
                 <h2 className="projects-title">Meus Projetos</h2>
 
                 <p className="projects-subtitle">
-                    Alguns projetos que desenvolvi e colaborei. Clique para ver mais..
+                    Alguns projetos que desenvolvi e colaborei. Clique para ver mais.
                 </p>
 
                 <div className="projects-grid">
