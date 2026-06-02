@@ -1,19 +1,26 @@
 const projects = [
     {
         id: 1,
-        title: "CRUD de Usuários",
-        description: "Sistema completo de CRUD para gerenciamento de usuários.",
-        blocked: true,
+        title: "MediTrack — Plataforma de Adesão ao Tratamento",
+        description: "Sistema de gerenciamento de prescrições médicas com envio automatizado de lembretes via WhatsApp, desenvolvido com Next.js, FastAPI e PostgreSQL.",
+        blocked: false,
         message: "Projeto não disponível publicamente devido à dependência de infraestrutura backend.",
         techs: [
-            { name: "PHP", icon: "logos:php", color: "#777BB4" },
-            { name: "MySQL", icon: "logos:mysql", color: "#4479A1" },
-            { name: "XAMPP", icon: "simple-icons:xampp", color: "#FB7A24" },
-            { name: "HTML", icon: "vscode-icons:file-type-html", color: "#E34F26" },
-            { name: "CSS", icon: "vscode-icons:file-type-css", color: "#1572B6" }
+                { name: "Next.js", icon: "logos:nextjs-icon", color: "#000000" },
+                { name: "React", icon: "logos:react", color: "#61DAFB" },
+                { name: "TypeScript", icon: "logos:typescript-icon", color: "#3178C6" },
+                { name: "Tailwind CSS", icon: "devicon:tailwindcss", color: "#06B6D4" },
+                { name: "shadcn/ui", icon: "simple-icons:shadcnui", color: "#000000" },
+                { name: "FastAPI", icon: "simple-icons:fastapi", color: "#009688" },
+                { name: "PostgreSQL", icon: "logos:postgresql", color: "#336791" },
+                { name: "Twilio", icon: "simple-icons:twilio", color: "#F22F46" },
+                { name: "JWT", icon: "simple-icons:jsonwebtokens", color: "#000000" },
+                { name: "Vercel", icon: "simple-icons:vercel", color: "#000000" },
+                { name: "Railway", icon: "simple-icons:railway", color: "#0B0D0E" },
+                { name: "Cloudflare", icon: "simple-icons:cloudflare", color: "#F38020" }
         ],
-        image: "/img/CRUD.png",
-        // github: "https://github.com/Thiagogmr1/Cadastro-em-PHP",
+        image: "/img/Medi.png",
+        demo: "https://www.meditrack-app.com/"
     },
     {
         id: 2,

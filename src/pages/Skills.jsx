@@ -4,6 +4,7 @@ import '../styles/skills.css';
 export default function Skills() {
   const skillsData = {
     frontend: [
+      { name: 'Next.js', icon: 'logos:nextjs-icon', color: '#000000' },
       { name: 'React', icon: 'logos:react', color: '#61DAFB' },
       { name: 'JavaScript', icon: 'logos:javascript', color: '#F7DF1E' },
       { name: 'HTML5', icon: 'vscode-icons:file-type-html', color: '#E34F26' },
@@ -15,7 +16,9 @@ export default function Skills() {
       { name: 'GitHub', icon: 'mdi:github', color: '#ffffff' },
       { name: 'VS Code', icon: 'vscode-icons:file-type-vscode', color: '#007ACC' },
       { name: 'Figma', icon: 'logos:figma', color: '#F24E1E' },
-      { name: 'IAs', icon: 'healthicons:artificial-intelligence-outline', color: '#5f5aed' }
+      { name: 'IAs', icon: 'healthicons:artificial-intelligence-outline', color: '#5f5aed' },
+      { name: 'Railway', icon: 'simple-icons:railway', color: '#0B0D0E' },
+      { name: 'Vercel', icon: 'simple-icons:vercel', color: '#000000' }
     ],
     Práticas: [
       { name: 'Responsive Design', icon: 'material-symbols:devices', color: '#00D9FF' },
