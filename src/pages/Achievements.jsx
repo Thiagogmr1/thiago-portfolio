@@ -9,7 +9,7 @@ export default function Achievements() {
   const achievements = [
     {
       image: "/photos/NIT.jpeg",
-      title: "Vencedor do 1º Hackathon da UniEvangélica",
+      title: "Vencedor do 2º Hackathon da UniEvangélica",
       description: "Reconhecido por apresentar o projeto Meditrack na área da saúde.",
 
       fullDescription: `O Meditrack nasceu de uma experiência intensa de inovação na UniEVANGÉLICA e ganhou destaque ao vencer 
@@ -22,7 +22,7 @@ export default function Achievements() {
     {
       image: "/photos/AgroStartup.jpeg",
       title: "2º Lugar no AgroStartup 2025",
-      description: `Equipe AcomGest — reconhecida no Desafio AgroStartup 2025, alcançando o 2º lugar e recebendo a premiação 
+      description: `Equipe AcomGest - reconhecida no Desafio AgroStartup 2025, alcançando o 2º lugar e recebendo a premiação 
       de R$ 60 mil pelo desenvolvimento de uma solução inovadora para o agronegócio.`,
 
       fullDescription: `A equipe AcomGest conquistou o 2º lugar no edital promovido pelo SENAR Goiás, sendo contemplada com 
@@ -43,6 +43,20 @@ export default function Achievements() {
       inteligência artificial aplicada à pecuária, com foco na inovação e na eficiência do agronegócio. A conquista ocorreu após 
       a participação em uma trilha de capacitação com reuniões online, workshops e mentorias estratégicas, contando com o apoio 
       institucional da UniEVANGÉLICA e do UniCIETEC.`
+    },
+
+    {
+      image: "/photos/img.png",
+      title: "Vencedor do 3º Hackathon da UniEvangélica",
+      description: "Plataforma de saúde digital que auxilia pacientes e profissionais no acompanhamento medicamentoso, promovendo maior adesão ao tratamento.",
+
+      fullDescription: `Após se destacar no Hackathon da UniEVANGÉLICA, o Meditrack voltou a ser reconhecido em uma nova edição
+      do evento, conquistando o 3º lugar entre os projetos participantes. A premiação reforçou o potencial da solução e contribuiu 
+      para a continuidade de seu desenvolvimento, incluindo uma bolsa de apoio à inovação e recursos para a evolução do MVP. 
+      Desenvolvido de forma colaborativa por uma equipe multidisciplinar das áreas de Engenharia de Software, Direito e Medicina, 
+      o Meditrack segue unindo tecnologia e impacto social para promover maior adesão ao tratamento medicamentoso e ampliar o acesso 
+      ao acompanhamento em saúde.
+`
     }
   ];
 
